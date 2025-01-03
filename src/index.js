@@ -60,7 +60,7 @@ const run = async () => {
 	}
 
 	try {
-		core.info(`Creating deployment with Vercel CLI`)
+		core.info(`Creating deployment with Vercel CLI, YO`)
 		const vercel = Vercel.init()
 
 		const commit = ATTACH_COMMIT_METADATA ? await github.getCommit() : undefined
