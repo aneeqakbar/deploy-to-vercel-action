@@ -9,7 +9,7 @@ const execCmd = (command, args, cwd) => {
 		let stderr
 
 		process.stdout.on('data', (data) => {
-			core.debug(data.toString())
+			core.debug("ON T_T:", data.toString())
 			if (data !== undefined && data.length > 0) {
 				stdout += data
 			}
@@ -23,6 +23,7 @@ const execCmd = (command, args, cwd) => {
 		})
 
 		process.on('close', (code) => {
+			core.debug("CLOSE T_T: ", code)
 			code !== 0 ? reject(new Error(stderr)) : resolve(stdout.trim())
 		})
 	})
