@@ -200,6 +200,7 @@ const run = async () => {
 run()
 	.then(() => {})
 	.catch((err) => {
-		core.error('ERROR')
+		core.error('ERROR YO')
+		core.info(err)
 		core.setFailed(err.message)
 	})
