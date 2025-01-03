@@ -29,7 +29,7 @@ const init = () => {
 	const deploy = async (commit) => {
 		let commandArguments = [ `--token=${ VERCEL_TOKEN }` ]
 
-		
+
 		if (VERCEL_SCOPE) {
 			commandArguments.push(`--scope=${ VERCEL_SCOPE }`)
 		}
@@ -72,8 +72,8 @@ const init = () => {
 		}
 
 		core.info('Starting deploy with Vercel CLI')
-		// const output = await exec('vercel', commandArguments, WORKING_DIRECTORY)
-		const output = await exec('ls', "", WORKING_DIRECTORY)
+		const output = await exec('vercel', commandArguments, WORKING_DIRECTORY)
+		// const output = await exec('ls', "", WORKING_DIRECTORY)
 		const parsed = output.match(/(?<=https?:\/\/)(.*)/g)[0]
 
 		if (!parsed) throw new Error('Could not parse deploymentUrl')

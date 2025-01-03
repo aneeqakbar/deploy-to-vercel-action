@@ -16,7 +16,7 @@ const execCmd = (command, args, cwd) => {
 		})
 
 		process.stderr.on('data', (data) => {
-			core.debug(data.toString())
+			core.debug("ERROR T_T:", data.toString())
 			if (data !== undefined && data.length > 0) {
 				stderr += data
 			}
