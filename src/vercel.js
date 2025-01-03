@@ -29,6 +29,7 @@ const init = () => {
 	const deploy = async (commit) => {
 		let commandArguments = [ `--token=${ VERCEL_TOKEN }` ]
 
+		
 		if (VERCEL_SCOPE) {
 			commandArguments.push(`--scope=${ VERCEL_SCOPE }`)
 		}
